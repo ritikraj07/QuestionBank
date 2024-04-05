@@ -1,9 +1,9 @@
 const Router = require("express").Router();
 const path = require("path");
 const fs = require("fs");
-const ExtractInfo = require("../Middleware/ExtractInfo");
+const SendMail = require("../Middleware/sendMail");
 
-Router.get("/", ExtractInfo, (req, res) => {
+Router.get("/", SendMail ,async (req, res) => {
     const { file } = req.query;
 
     if (!file) {
