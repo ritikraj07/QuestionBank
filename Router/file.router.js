@@ -27,7 +27,7 @@ Router.get("/", async (req, res) => {
 
     // Increment download count for the requested file
     count[file]++;
-    console.log(`Downloaded ${count[file]} times`);
+    console.log(`Downloaded ${file}.pdf ${count[file]} times`);
 
     // Set the Content-Disposition header to prompt download with the specified file name
     res.setHeader('Content-Disposition', `attachment; filename="${file}.pdf"`);
