@@ -5,7 +5,7 @@ const fs = require("fs");
 // Initialize count object to track downloads
 let count = {
     "EPS-Main": 35,    // Initial count for "EPS-Main" file
-    "EPS-Actual": 0    // Initial count for "EPS-Actual" file
+    "EPS-Actual": 1   // Initial count for "EPS-Actual" file
 }
 
 // Define route handler for GET requests to "/"
@@ -27,7 +27,7 @@ Router.get("/", async (req, res) => {
 
     // Increment download count for the requested file
     count[file]++;
-    console.log(`Downloaded ${count} times`);
+    console.log(`Downloaded ${count[file]} times`);
 
     // Set the Content-Disposition header to prompt download with the specified file name
     res.setHeader('Content-Disposition', `attachment; filename="${file}.pdf"`);
