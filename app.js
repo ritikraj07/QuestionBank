@@ -25,10 +25,11 @@ app.get("/", (req, res) => {
 app.use("/download", require("./Router/file.router.js"))
 
 
+const PORT = process.env.PORT || 8000
 
 ConnectDatabase()
     .then(() => {
-        app.listen(8000)
+        app.listen(PORT)
         console.log("Server Started")
     })
 
