@@ -18,7 +18,7 @@ app.use(cookiePaser());
 
 
 app.get("/", (req, res) => {
-    res.render("home")
+    res.send("Hello, I am Ritik 😴")
 })
 
 
