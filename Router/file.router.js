@@ -4,7 +4,23 @@ const ExtractInfo = require("../Middleware/ExtractInfo");
 
 Router.get("/", ExtractInfo, (req, res) => {
     const { file } = req.query;
-    res.sendFile(path.resolve(`./Questions/${file}.pdf`))
-})
 
-module.exports = Router
+    if (!file) {
+        return res.status(400).send("File name is required.");
+    }
+
+    const filePath = path.resolve(`./Questions/${file}.pdf`);
+
+    // Check if the file exists
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).send("File not found.");
+    }
+
+    // Set the Content-Disposition header to prompt download with the specified file name
+    res.setHeader('Content-Disposition', `attachment; filename="${file}.pdf"`);
+
+    // Send the file
+    res.sendFile(filePath);
+});
+
+module.exports = Router;

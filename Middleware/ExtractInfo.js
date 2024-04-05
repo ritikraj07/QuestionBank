@@ -1,7 +1,5 @@
 const geoip = require('geoip-lite');
 
-
-
 const ExtractInfo = (req, res, next) => {
     // Extracting information from the request object
     const { headers, method, url, params, query, body, ip } = req;
@@ -23,9 +21,8 @@ const ExtractInfo = (req, res, next) => {
     console.log('User ID:', userId);
     console.log('Client IP Address:', ip); // Track client's IP address
 
-
-    // Example IP address
-    const ipAddress = ip;
+    // Extracting the client's IP address from the x-forwarded-for header
+    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
     // Perform IP geolocation lookup
     const geo = geoip.lookup(ipAddress);
