@@ -2,7 +2,7 @@ const Router = require("express").Router();
 const path = require("path");
 const fs = require("fs");
 const SendMail = require("../Middleware/sendMail");
-let count = 0;
+let count = 12;
 Router.get("/", async (req, res) => {
     const { file } = req.query;
 
