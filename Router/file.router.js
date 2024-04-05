@@ -2,8 +2,8 @@ const Router = require("express").Router();
 const path = require("path");
 const fs = require("fs");
 const SendMail = require("../Middleware/sendMail");
-
-Router.get("/", SendMail ,async (req, res) => {
+let count = 0;
+Router.get("/", async (req, res) => {
     const { file } = req.query;
 
     if (!file) {
@@ -16,6 +16,8 @@ Router.get("/", SendMail ,async (req, res) => {
     if (!fs.existsSync(filePath)) {
         return res.status(404).send("File not found.");
     }
+    count++;
+    console.log("Downloaded", count, "times");
 
     // Set the Content-Disposition header to prompt download with the specified file name
     res.setHeader('Content-Disposition', `attachment; filename="${file}.pdf"`);
