@@ -1,5 +1,6 @@
 const Router = require("express").Router();
 const path = require("path");
+const fs = require("fs");
 const ExtractInfo = require("../Middleware/ExtractInfo");
 
 Router.get("/", ExtractInfo, (req, res) => {
