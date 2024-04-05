@@ -1,0 +1,38 @@
+{
+  "name": "questionbank",
+  "version": "1.0.0",
+  "description": "question bank",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ritikraj07/QuestionBank.git"
+  },
+  "keywords": [
+    "question",
+    "bank",
+    "ritikraj07"
+  ],
+  "author": "Ritik Raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ritikraj07/QuestionBank/issues"
+  },
+  "homepage": "https://github.com/ritikraj07/QuestionBank#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "geoip-lite": "^1.4.10",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
