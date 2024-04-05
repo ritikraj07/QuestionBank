@@ -32,11 +32,11 @@ const ExtractInfo = (req, res, next) => {
 
     // Display the geographical information
     console.log('Geographical Address:');
-    console.log('City:', geo.city);
-    console.log('Region:', geo.region);
-    console.log('Country:', geo.country);
-    console.log('Latitude:', geo.ll[0]);
-    console.log('Longitude:', geo.ll[1]);
+    console.log('City:', geo?.city);
+    console.log('Region:', geo?.region);
+    console.log('Country:', geo?.country);
+    console.log('Latitude:', geo?.ll[0]);
+    console.log('Longitude:', geo?.ll[1]);
 
     // Proceed to the next middleware function
     next();
